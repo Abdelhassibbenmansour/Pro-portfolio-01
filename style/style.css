@@ -1,0 +1,311 @@
+/* Start variables */
+:root {
+    --special-text: #21243D;
+    --padding: 15px;
+    --main-transition: 0.3s;
+}
+/* End variables */
+/* Start Global rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Start Global rules */
+/* Start nav */
+nav {
+    padding: 20px;
+    position: relative;
+}
+nav .container {
+    display: flex;
+    justify-content: flex-end;
+}
+nav .container i {
+    transition: var(--main-transition);
+}
+nav .container ul {
+    display: flex;
+    gap: 35px;
+    z-index: 2;
+}
+nav .container ul li:hover a {
+    color: #FF6464;
+    transition: var(--main-transition);
+    border-bottom: 1px solid #FF6464;
+}
+@media (min-width:768px) {
+    nav .container i {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    nav .container i:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        background-color: #EDF7FA;
+        padding: 20px;
+    }
+    nav .container ul {
+        display: none;
+    }
+}
+/* End nav */
+/* Start header */
+header {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+header .container {
+    display: flex;
+    justify-content: space-around;
+}
+header .container .text {
+    flex-basis: 50%;
+}
+header .container .text .special-head {
+    color: var(--special-text);
+    font-weight: bold;
+}
+header .container .text  div {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+header .container .text p {
+    color: var(--special-text);
+    line-height: 2;
+    margin-bottom: 30px;
+}
+header .container .text button {
+    background-color: #FF6464;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: var(--padding);
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+header .container .text button:hover {
+    color: #FF6464;
+    background-color: #EDF7FA;
+}
+header .container .image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    box-shadow: -5px 15px 0 3px #EDF7FA;
+}
+header .container .image img {
+    max-width: 100%;
+}
+@media (max-width: 767px) {
+    header {
+        margin-bottom: 40px;
+    }
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    header .container .text {
+        text-align: center;
+    }
+}
+/* End header */
+/* Start section */
+section {
+    background-color: #EDF7FA;
+    padding: var(--padding);
+}
+section .container .nano-text,
+section .container .mega-text {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: var(--padding);
+}
+section .container .nano-text {
+    margin-bottom: 5px;
+}
+section .container .nano-text p {
+    font-size: 22px;
+    color: #21243D;
+}
+section .container .nano-text span {
+    color: #00A8CC;
+}
+section .container .mega-text > div {
+    background-color: white;
+    padding: calc(var(--padding)*2);
+    overflow: hidden;
+    flex-basis: 45%;
+}
+section .container .mega-text h3 {
+    font-size: 29px;
+    margin-bottom: var(--padding);
+}
+section .container .mega-text > div > div {
+    display: flex;
+    gap: 40px;
+    font-size: 17px;
+    margin-bottom: var(--padding);
+}
+@media (max-width: 767px) {
+    section .container .nano-text span {
+        display: none;
+    }
+    section .container .nano-text,
+    section .container .mega-text {
+        flex-direction: column;
+    }
+    section .container .nano-text {
+        text-align: center;
+    }
+    section .container .mega-text > div {
+        margin-bottom: 30px;
+    }
+    section .container .mega-text h3 {
+        font-size: 20px;
+    }
+    section .container .mega-text > div > div {
+        gap: 10px;
+        font-size: 15px;
+    }
+}
+/* End section */
+/* Start aside */
+aside {
+    padding: 20px;
+    margin-bottom: calc(var(--padding)*3);
+}
+aside .container > p {
+    font-size: 22px;
+}
+aside .container .content  {
+    display: flex;
+    flex-direction: column;
+}
+aside .container .big-box {
+    border-bottom: 3px solid #EDF7FA;
+    position: relative;
+    padding-bottom: var(--padding);
+    margin-top: var(--padding);
+    display: flex;
+    gap: 20px;
+}
+aside .container .big-box .photo {
+    width: 300px;
+    overflow: hidden;
+}
+aside .container .big-box .photo img {
+    max-width: 100%;
+    height: 120px;
+    transition: var(--main-transition);
+}
+aside .container .big-box .photo img:hover {
+    opacity: 0.4;
+    scale: 1.5;
+    rotate: 10deg;
+}
+aside .container .big-box .small-box h3 {
+    color: #21243D;
+    text-transform: capitalize;
+}
+aside .container .big-box .small-box  .info {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+aside .container .big-box .small-box  .info span:first-of-type {
+    color: white;
+    background-color: #21243D;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 13px;
+    margin-right: 20px;
+}
+aside .container .big-box .small-box .info span:last-of-type {
+    color: #8695A4;
+}
+@media (min-width: 768px) {
+    aside .container .big-box {
+        height: 150px;
+    }
+}
+@media (max-width: 767px) {
+    aside .container .big-box {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    aside .container .big-box .photo img {
+        height: 100px;
+        width: 200px;
+    }
+}
+/* End aside */
+/* Start Footer */
+footer {
+    padding: 40px;
+}
+footer .container ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+footer .container ul li {
+    font-size: 30px;
+    color: #21243D;
+}
+footer .container p {
+    text-align: center;
+}
+/* End Footer */
